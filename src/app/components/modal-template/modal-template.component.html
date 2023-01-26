@@ -1,0 +1,12 @@
+<div class="flex-container">
+  <h1 mat-dialog-title style="color: #af2c22; vertical-align: middle;">{{accion}} {{titulo}} </h1>
+<button mat-icon-button color="accent" mat-dialog-close style="color: #af2c22;"><mat-icon>close</mat-icon>
+</button>
+
+</div>
+<div *ngIf="(accion=='Agregar' || accion=='Editar') && titulo=='producto'">
+  <app-add-producto></app-add-producto>
+</div>
+<div *ngIf="(accion=='Agregar' || accion=='Editar') && titulo=='productos'">
+  <app-addm-producto></app-addm-producto>
+</div>

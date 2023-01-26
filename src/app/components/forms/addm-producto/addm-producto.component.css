@@ -1,0 +1,29 @@
+.full-width {
+  width: 100%;
+}
+
+.shipping-card {
+  min-width: 120px;
+  margin: 20px auto;
+}
+
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.mat-card-actions{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+.btn{
+    margin: 20px,20px;
+    width: 100px;
+    height: 50px;
+}

@@ -1,0 +1,49 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="OnSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre producto" formControlName="name">
+            <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+              Nombre es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Estado" formControlName="estado">
+              <mat-option *ngFor="let estado of estado" [value]="estado.name">
+                {{ estado.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
+              estado es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Elaborado" formControlName="elaborado">
+              <mat-option *ngFor="let elaboracion of elaboracion"[value]="elaboracion.name">
+                {{ elaboracion.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="addressForm.controls['elaborado'].hasError('required')">
+              elaboracion es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    
+    </mat-card-content>
+    
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">{{title}} producto</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

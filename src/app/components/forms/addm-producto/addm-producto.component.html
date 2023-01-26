@@ -1,0 +1,58 @@
+
+<form [formGroup]="addressForm" novalidate (ngSubmit)="OnSubmit()">
+<div class="demo-button-container" style="float: right;padding: 1%;">
+    
+     <mat-card-actions>
+      <button  class ="btn" mat-raised-button (click)="agregarObj()">Nuevo registro</button>
+      <button  class ="btn" mat-raised-button color="primary" type="submit"> Guardar Todo</button>
+    </mat-card-actions>
+  </div>
+  <mat-card class="shipping-card">
+    <mat-card-content>
+     
+    
+    
+
+
+  <div formArrayName="objetos" *ngFor="let objetos of objetos.controls; let i = index">
+    <div [formGroupName]="i">
+      
+      <div class="row">
+        
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre producto" formControlName="nombre">
+          </mat-form-field>  
+        
+
+        
+        
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Estado" formControlName="estado">
+              <mat-option *ngFor="let estado of estado" [value]="estado.name">
+                {{ estado.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+
+        
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Elaborado" formControlName="elaborado">
+              <mat-option *ngFor="let elaboracion of elaboracion"[value]="elaboracion.name">
+                {{ elaboracion.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      </div>
+    
+  
+    </mat-card-content>
+    
+
+
+  
+  </mat-card>
+</form>
